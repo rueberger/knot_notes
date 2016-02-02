@@ -1,0 +1,15 @@
+\contentsline {section}{\numberline {1}Disclaimer}{3}{section.1}
+\contentsline {section}{\numberline {2}1/19/16: Introduction + Motivation}{4}{section.2}
+\contentsline {section}{\numberline {3}1/21/16: 2nd class}{5}{section.3}
+\contentsline {subsection}{\numberline {3.1}Logistical things}{5}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Minimal introduction to point-set topology}{5}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Equivalence of knots}{6}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Reidemeister moves}{6}{subsection.3.4}
+\contentsline {section}{\numberline {4}1/26/16: recap of the last lecture}{9}{section.4}
+\contentsline {subsection}{\numberline {4.1}Recap of last lecture}{9}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Intro to knot complement}{9}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Hard Unknots}{9}{subsection.4.3}
+\contentsline {section}{\numberline {5}1/28/16}{11}{section.5}
+\contentsline {subsection}{\numberline {5.1}Logistical things}{11}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Question from last time}{11}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Connect sum operation, knot cancelling, prime knots}{11}{subsection.5.3}

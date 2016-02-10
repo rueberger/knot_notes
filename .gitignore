@@ -1,0 +1,14 @@
+*.dvi
+*.aux
+*.log
+*.py~
+*.tex~
+*.swp
+*.fmt
+*.prv
+*.out
+_region_.tex
+
+*.toc
+*.bbl
+*.blg

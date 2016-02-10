@@ -574,16 +574,6 @@ When a proof of some theorem requires you to first move outside of a given frame
 \clearpage
 \section{2/9/16 -- The trefoil is knotted}
 
-\subsection{Introductory remarks}
-
-
-A little remark: not all knots can be untwisted without using R1. For instance, an unknot with two twists in it of opposite orientation can be unknotted without R1 because the twists can be manipulated around such that
-they `cancel' each other, but an unknot with two twists of the same orientation cannot be unknotted without R1! The extended parity result holds for more than two knots.
-
-There are many connections between knots and analysis.
-
-Anyone who tells you knots are not interesting is objectively wrong.
-
 
 \subsection{The trefoil is not the unknot}
 
@@ -601,8 +591,8 @@ Some methods of proof: braiding, (tri)colorability, fundamental group, (Jones) p
 \subsection{Braids}
 
 \begin{definition}
-  A braid of $n$ strings consists of $\sigma = n$ oriented arcs with fixed ordered endpoints.
-  Take $n$ unlinks passing in parallel through a region, cut all of the strings, and permute where they attach to on the other side. That's a braid.
+  A braid $\sigma$ of $n$ strings consists of $n$ oriented arcs with fixed ordered endpoints.
+  Take $n$ unlinks passing in parallel through a region, cut all of the strings in some boxed region, and permute where they attach to on the other side (via $\sigma$). That gets you some link $\hat\sigma$.
 \end{definition}
 
 
@@ -614,39 +604,39 @@ Some methods of proof: braiding, (tri)colorability, fundamental group, (Jones) p
 
 
 \begin{remark}
-  What things can we do with this theorem (as researchers)? It says this map is surjective - is it injective? No
+  What things can we do with this theorem (as researchers)? It says this map $\sigma\mapsto\hat\sigma$ is surjective - is it injective? No
 \end{remark}
 
 
 
 \begin{thm}{Markov}
-  There exists moves $\sigma_1  \mapsto \sigma_2$ which don't effect $\hat{\sigma_1}$ (the produced link)
+  There exists moves $\sigma_1  \mapsto \sigma_2$ which don't affect $\hat{\sigma_1}$ (the produced link)
 \end{thm}
 
 
 \begin{ex}
   If $\sigma = \identity_n$ (the identity permutation) then $\hat{\sigma}$ is the $n$ unlink.
   But if $\hat{\sigma}$ is the n unlink does $\sigma = \identity_n$? Yes (This is a theorem of Birman-Menasco)
-  Note that this does not exclude permutations that produce less than $n$ unlinks. There certainly permutations that do this, for instance any twist.
+  Note that this does not exclude permutations that produce less than $n$ unlinks. There are certainly permutations that do this, for instance a simple twist of two strands.
 \end{ex}
 
 
 
 \subsubsection{The braid group}
 
-Are braids a group under composition? We discovered that connected sum on knots forms the structure of a monoid as knots cannot be canceled.
+Are braids a group under concatenation? We discovered that connected sum on knots forms the structure of a monoid as knots cannot be canceled.
 
-Yes, $(B_n = \set{\sigma_i}), \cdot$ is in fact a group! It can be represented as $B_n = \gen{\sigma_1, \ldots, \sigma_{n-1}} | \text{ generators summarized below}$
+Yes, $(B_n = \set{\sigma_i}), \cdot$ is in fact a group! It can be represented as $B_n = \langle\sigma_1, \ldots, \sigma_{n-1}\; |\; \text{relations below}\rangle$
 
-The generators have the form $\sigma_i = (i [i + 1])$ (they swap with their neighbor). If $\abs{i - j} \geq 2$ then $\sigma_i \sigma_j = \sigma_j \sigma_i$ - when generators are far apart they commute.
-For $\sigma_i \sigma_{i +1} \sigma_i = \sigma_{i + 1} \sigma_i \sigma_{i + 1}$
+The generators have the form $\sigma_i = (i [i + 1])$ (they swap with their neighbor). If $\abs{i - j} \geq 2$ then $\sigma_i \sigma_j = \sigma_j \sigma_i$ -- when generators are far apart they commute.
+Else $\sigma_i \sigma_{i +1} \sigma_i = \sigma_{i + 1} \sigma_i \sigma_{i + 1}$
 
 
 \begin{ex}
 
   \begin{itemize}
     \item Show that $(\sigma_1 \dots \sigma_{n - 1})^m$ produces the $(n, m)$-torus link.
-    \item Show that the trefoi is not the unknot using braid theory
+    \item Show that the trefoil is not the unknot using braid theory
   \end{itemize}
 
 \end{ex}
@@ -654,7 +644,7 @@ For $\sigma_i \sigma_{i +1} \sigma_i = \sigma_{i + 1} \sigma_i \sigma_{i + 1}$
 
 \subsection{Research Project ideas}
 
-Short projects should be done by spring break. Chris is pretty relaxed about things, just do good math and have fun.
+Short projects should be done by spring break. Have fun.
 
 \begin{itemize}
   \item Knot mosaics

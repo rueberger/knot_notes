@@ -1,4 +1,4 @@
-\documentclass[11pt]{article}
+ \documentclass[11pt]{article}
 
 \usepackage{amsmath}
 \usepackage{amsxtra}
@@ -658,14 +658,93 @@ Short projects should be done by spring break. Have fun.
 
 
 
-\subsection{2/11}
+\subsection{2/11: the fundental group}
+
+\subsection{Logistical happenings}
+
+
+\begin{itemize}
+\item Does everyone have a partner? Subjects?
+\item Chris away March 15 - 17. Maybe we'll just meet anyway and do class presentations
+\end{itemize}
+
+
+\begin{recall}
+
+A quick review of some definitions and the distinction between a ambient isotopy and a covering space.
+
+Ambient isotopy. Suppose we have ambient spaces $X = \R^3, Y = \R^3$ with knot subspaces $K_1 \subseteq X, K_2 \subseteq Y$. Then an ambient isotopy is a homeomoprhism $f : X \to Y$ such that $K_1 \mapsto K_2$
+
+Covering space. Image coiling the real line up into a spiral so that if you look directly down on it you see the unit circle - this is a covering of the unit circle.
+
+Mention of Dane surgery.
+
+\end{recall}
+
+
+We still don't know that the trefoil is knotted!
+
+
+\begin{ex}
+  Show with the braid group that the trefoil is knotted. Hint: Markov theorem
+\end{ex}
+
 
 \subsection{Colorings}
 
+We will be able to prove with colorability that the trefoil is not knotted.
+
+
+\begin{definition}[Strand]
+  A strand is a line in a diagram that goes from an undercross to an undercross.
+
+  For instance the trefoil is made up of 3 strands.
+\end{definition}
+
+\subsubsection{Tri-colorability}
 
 
 
-\subsection{$\pi_1$: the fundamental group; on Thursday}
+\begin{definition}[Tri-coloring]
+
+  A knot diagram has a tri-coloring if each strand can be colored one of three colors such that at each crossing either all three colors or only one color are present
+
+\end{definition}
+
+
+
+\begin{notation}
+  $\tau(K)$ denotes the number of colorings (not just tri-colorings!) of knot $K$
+\end{notation}
+
+\begin{question}
+  Research questions that come up about colorings
+  \begin{itemize}
+  \item Is colorability invariant under R-moves? Well-defined? Yes. It's an easy exercise to show.
+  \item Does every knot have a tri-coloring? No. The unknot is not tri-colorable.
+  \item Relation between prime knots and colorability?
+  \end{itemize}
+\end{question}
+
+
+
+\begin{ex}
+
+  \begin{itemize}
+  \item $\tau(0) = 3 = 3^1$. The unknot has 3 colorings
+  \item $\tau(T) = 3 + 3 \cdot 2 = 3^2$. The trefoil has 9 colorings
+  \item The trefoil is tri-colorable, but the figure 8 knot isn't. So now our problem is to see that the figure 8 knot is knotted.
+  \item $\tau(K) \leq 3^{\text{number of strands of } K}$
+  \end{itemize}
+
+\end{ex}
+
+Tuesday is going to be a crash course in algebraic topology. We'll learn algebraically that knots are
+knotted because of their ambient isotopies. That will segue into polynomials and all sorts of other fun stuff
+
+
+
+\subsection{$\pi_1$: the fundamental group; on Tuesday}
 
 
 

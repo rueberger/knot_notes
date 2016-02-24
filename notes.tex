@@ -820,6 +820,90 @@ If $\pi_1(\R^3-K)\cong \pi_1(\R^3-J)$ then does $K\cong J$? \textit{No, look at 
 
 $\mathcal{K}:=\lbrace\text{knots}\rbrace$. Our invariants so far took the form $\mathcal{K}\to\Z$ (such as the genus and minimal crossing number), or $\mathcal{K}\to\lbrace\text{groups}\rbrace$ via $\pi_1$ of the knot complement. We will now expand to polynomial rings, which should be more sensitive to the richness of $\mathcal{K}$ because $\Z\subset\Z[x]$.
 
+\subsection{Kauffman bracket polynomial}
+In analogy with \textit{Seifert's algorithm}, we take a knot diagram for $K$ and ``break up'' its crossing to end up with a collection of (Seifert) circles. We can ``break up'' each crossing via an A-split or B-split. Therefore, there are different results after all crossings are broken -- each possible result is called a \textit{state}, denoted $\sigma$.
+
+$\sigma$ has two pieces of information attached to it:
+
+1) The number of Seifert circles $n(\sigma)$, and 
+
+2) The commutative product of labels for all of the crossings that were broken up (ex: $A^2B$ for $\sigma$ which resulted from a 3-crossing diagram that had two A-splits and one B-split), denoted $\langle K\,|\,\sigma\rangle$.
+
+\bigskip
+In analogy with the partition function of statistical thermodynamics (looking at weighted averages of the possible ``states'' of a given system), we define the \textbf{bracket polynomial}
+\begin{center}
+$\langle K\rangle =\sum_\sigma\langle K\,|\,\sigma\rangle\cdot d^{n(\sigma)-1}$
+\end{center}
+The point here is that if I give you all the states $\lbrace\sigma\rbrace$, you can recover $K$. Then $\langle K\rangle$ is a weighted average, so it should contain a lot of information about the knot... but it doesn't tell us everything, because it's only an average.
+
+So far this has 3 indeterminate variables: $A,B,d$. But we must ask, is this an invariant of $K$, i.e. is it independent of the Reidemeister moves??? When analyzing the R2 and R3 moves, we will want $B=A^{-1}$ and $d=-A^2-A^{-2}$. Thus we are left with 1 indeterminate variable $A$.
+
+\begin{ex}
+$\langle O\rangle=1$.
+\end{ex}
+\noindent
+But what about the R1 move? It turns out that
+
+$\langle\text{over-twist}\rangle=-A^3\langle\text{no twist}\rangle$
+
+$\langle\text{under-twist}\rangle=-A^{-3}\langle\text{no twist}\rangle$
+
+\noindent
+Thus the Kauffman bracket polynomial isn't good enough! But we have learned that the writhe is sensitive to the (oriented) R1 move:
+
+$w(\text{over-twist})=1+w(\text{no twist})$
+
+$w(\text{under-twist})=-1+w(\text{no twist})$
+
+\noindent
+So we can alter the bracket polynomial to get a well-defined polynomial invariant $\mathcal{L}_K$ as a function of $A$:
+\begin{center}
+$\mathcal{L}_K=(-A^3)^{-w(K)}\langle K\rangle$
+\end{center}
+
+\begin{remark}
+This is not a map from $\mathcal{K}$ to $\Z[A]$, because there can be negative powers of $A$. We really have Laurent polynomials, and by a change of variables we will get the so-called \textbf{Jones polynomial}.
+\end{remark}
+
+Now we can deduce a lot of stuff very quickly, through algorithmic computational algebra.
+
+\begin{thm}
+Achiral knots $K\cong K^\ast$ have palindromic coefficients in their polynomial.
+\end{thm}
+
+Indeed, reversing crossings will reverse the roles of $A$ and $A^{-1}$, so that $\mathcal{L}_{K^\ast}(A)=\mathcal{L}_K(A^{-1})$.
+
+\begin{exercise}
+Compute $\mathcal{L}_T$ for the trefoil. You'll get the following results along the way:
+
+1) The trefoil knot is knotted.
+
+2) The trefoil knot is chiral (i.e. not equivalent to its mirror)!
+
+3) The Hopf link is linked.
+
+\textit{Answer:} $\mathcal{L}_T(A)=A^{-4}+A^{-12}-A^{-16}$, $\mathcal{L}_\text{Hopf}(A)=-A^4-A^{-4}$
+\end{exercise}
+
+
+\subsection{Provoked questions}
+\indent\indent
+Based on the construction above, is there any relation between the bracket polynomial and (genus of) Seifert surfaces?
+
+\bigskip
+What information do we get if we plug in different values for $A$?
+
+\bigskip
+If the polynomial has palindromic coefficients, is the knot achiral?
+
+
+
+
+
+
+
+
+
 
 
 

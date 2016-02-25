@@ -825,7 +825,7 @@ In analogy with \textit{Seifert's algorithm}, we take a knot diagram for $K$ and
 
 $\sigma$ has two pieces of information attached to it:
 
-1) The number of Seifert circles $n(\sigma)$, and 
+1) The number of Seifert circles $n(\sigma)$, and
 
 2) The commutative product of labels for all of the crossings that were broken up (ex: $A^2B$ for $\sigma$ which resulted from a 3-crossing diagram that had two A-splits and one B-split), denoted $\langle K\,|\,\sigma\rangle$.
 
@@ -897,15 +897,106 @@ What information do we get if we plug in different values for $A$?
 If the polynomial has palindromic coefficients, is the knot achiral?
 
 
+\section{2/25}
+
+Francesca's dinosaur is named Mavis.
+
+Homework for next week: come up with an interesting question to ask in class
+
+\subsection{Axioms of the Jone's polynomial}
+
+We denote the Jone's polynomial of a knot $K$ $V(K)$ or $V_K(A)$
+
+
+\begin{itemize}
+  \item $V_0 = 1$ normalization
+  \item $V_K$ is isotopy-invariant
+  \item $t^{-1} V_{\text{cross over}} - t  \V_{\text{cross under}} = (\sqrt{t} - \frac{1}{\sqrt{t}})V_{\text{don't cross at all}}$. This the Skein relation for the Jone's polynomial
+\end{itemize}
+
+
+\begin{ex}
+  Put some twists in the unknot - what does that get you? You can easily compute the Jone's polynomial of the unlink.
+  $V_{0 0} = -t^{\frac{1}{2}} - t^{-\frac{1}{2}}$
+
+  For any link $L$, using R1 and the Skein relation you can compute $V_{L \cup 0}$
+
+  What about the trefoil?
+\end{ex}
+
+\subsection{Uniqueness of Jone's polynomial}
+
+
+\begin{thm}
+Suppose you have some $I: \K = \set{\text{oriented links}} \to \Z[\sqrt{t}, \frac{1}{\sqrt{t}}]$.
+If it satisfies the axioms of the Jone's polynomials stated above, then it is the Jone's polynomial.
+\end{thm}
+
+
+\begin{remark}
+  The Skein relation does all of the heavy lifting here.
+
+  It's trivial to satisfy the first relation, and what are you even doing if your map doesn't satisfy the second relation.
+\end{remark}
+
+\subsection{Just how sensitive is the Jone's polynomia}
+
+
+\begin{question}
+  Does $V$ `detect' the unknot? $V_K = 1 \implies K \cong 0$?
+\end{question}
+
+This is still an open question!!!
+
+\begin{question}
+  Can you read off the unknotting number from the Jones polynomial?
+  The Skein relation gives us reason to think that this might be the case.
+\end{question}
+
+
+There is an even more powerful object we could map the knots into, called the Khovonav homology.
+We won't be able to get into it in this class, but it essentially maps into some system of groups.
+The Khovonav homology detects the unknot.
+
+Thistelthwaite found a 2-component link $L$ such that $V_L = V_{0 0}$. Thus the Jone's polynomial is not
+sensitive enough to detect the unlink.
+
+
+Mutation is an aptly named operation that given $K$ outputs $M(K)$ produced by
+drawing a box around a region of the knot and rotating it by $\pi$ in `different ways'.
+$V_{M(K)} = V_K$. Uh oh.
+
+\subsection{Other polynomials}
+
+$K_-, K_+, K_0$ denote the undercrossing, overcrossing, and no crossing respectively
+
+\begin{itemize}
+  \item Jones $V_K(t) \in \Z[\sqrt{t}, \frac{1}{\sqrt{t}}]$
+  \item Alexander-Conway $\nabla_K(z) \in \Z[z]$. With Skein relation $\nabla_{K_+} - \nabla_{K_-} = z \nabla_{K_0}$
+  \item HOMFLY $P_K(\alpha, z) \in \Z[\alpha, z]$. The previous two are special cases of this polynomial:
+
+    \begin{itemize}
+      \item $V_K(t) = P_k(t^{-1}, \sqrt{t} - \frac{1}{\sqrt{t}})$
+      \item $\nabla_K(z) = P_K(1, z)$
+    \end{itemize}
+
+    HOMFLY has Skein relation $\alpha P_{K_+} - \alpha^{-1} P_{K_-} = z P_{K_0}$
+
+    Interestingly, $P_K(\alpha, z) = P_{K^\ast}(\alpha^{-1}, z)$ (where $K^\ast$ is mirrored)
+\end{itemize}
 
 
 
+\begin{exercise}
+  Show that $P(K \# J) = P(K) P(J)$ in two ways: by definition of $P$ and for $V$ using the definition of the bracket polynomials.
+\end{exercise}
 
 
+\begin{remark}
+  $\nabla_K = 1 \iff G_k \defeq \pi_1(\R^3 - K) \text{ is perfect}$. Perfect means that $G$ is equal to it's commutator subgroup.
 
-
-
-
+  Thus, the Alexander polynomial cannot detect the unknot
+\end{remark}
 
 
 \end{document}

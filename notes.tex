@@ -58,7 +58,7 @@
 \newtheorem{question}{Question}
 
 \title{Lectures notes on knot theory}
-\author{Andrew Berger}
+\author{Andrew Berger\\(instructor Chris Gerig)}
 
 \begin{document}
 \maketitle
@@ -821,7 +821,7 @@ If $\pi_1(\R^3-K)\cong \pi_1(\R^3-J)$ then does $K\cong J$? \textit{No, look at 
 $\mathcal{K}:=\lbrace\text{knots}\rbrace$. Our invariants so far took the form $\mathcal{K}\to\Z$ (such as the genus and minimal crossing number), or $\mathcal{K}\to\lbrace\text{groups}\rbrace$ via $\pi_1$ of the knot complement. We will now expand to polynomial rings, which should be more sensitive to the richness of $\mathcal{K}$ because $\Z\subset\Z[x]$.
 
 \subsection{Kauffman bracket polynomial}
-In analogy with \textit{Seifert's algorithm}, we take a knot diagram for $K$ and ``break up'' its crossing to end up with a collection of (Seifert) circles. We can ``break up'' each crossing via an A-split or B-split. Therefore, there are different results after all crossings are broken -- each possible result is called a \textit{state}, denoted $\sigma$.
+In analogy with \textit{Seifert's algorithm}, we take a knot diagram for $K$ and ``break up'' all of its crossings to end up with a collection of (Seifert) circles. We can ``break up'' each crossing via an A-split or B-split. Therefore, there are different results after all crossings are broken -- each possible result is called a \textit{state}, denoted $\sigma$.
 
 $\sigma$ has two pieces of information attached to it:
 
@@ -897,78 +897,77 @@ What information do we get if we plug in different values for $A$?
 If the polynomial has palindromic coefficients, is the knot achiral?
 
 
+
+
+
+
+
+\clearpage
 \section{2/25}
 
 Francesca's dinosaur is named Mavis.
 
 Homework for next week: come up with an interesting question to ask in class
 
-\subsection{Axioms of the Jone's polynomial}
+\subsection{Axioms of the Jones polynomial}
 
-We denote the Jone's polynomial of a knot $K$ $V(K)$ or $V_K(A)$
+We denote the Jones polynomial of a knot $K$ by $V(K)$, or $V_K(A)$ to emphasize the indeterminate
 
 
 \begin{itemize}
   \item $V_0 = 1$ normalization
   \item $V_K$ is isotopy-invariant
-  \item $t^{-1} V_{\text{cross over}} - t  \V_{\text{cross under}} = (\sqrt{t} - \frac{1}{\sqrt{t}})V_{\text{don't cross at all}}$. This the Skein relation for the Jone's polynomial
+  \item $t^{-1} V_{\text{cross over}} - t  V_{\text{cross under}} = (\sqrt{t} - \frac{1}{\sqrt{t}})V_{\text{remove cross}}\;\;\;\;\;$ \textit{Skein Relation}
 \end{itemize}
 
 
 \begin{ex}
-  Put some twists in the unknot - what does that get you? You can easily compute the Jone's polynomial of the unlink.
+  Put some twists in the unknot -- what does that get you? You can easily compute the Jones polynomial of the unlink.
   $V_{0 0} = -t^{\frac{1}{2}} - t^{-\frac{1}{2}}$
 
   For any link $L$, using R1 and the Skein relation you can compute $V_{L \cup 0}$
 
-  What about the trefoil?
+  What about the trefoil? Its Skein relation involves the Hopf link and unknot!
 \end{ex}
 
-\subsection{Uniqueness of Jone's polynomial}
+\subsection{Uniqueness of Jones polynomial}
 
 
 \begin{thm}
 Suppose you have some $I: \K = \set{\text{oriented links}} \to \Z[\sqrt{t}, \frac{1}{\sqrt{t}}]$.
-If it satisfies the axioms of the Jone's polynomials stated above, then it is the Jone's polynomial.
+If it satisfies the axioms of the Jones polynomials stated above, then it is the Jones polynomial.
 \end{thm}
 
+The point is that any desirable polynomial $I$ needs to be an invariant (hence Axiom 2), and can always be normalized so that it evaluates the unknot as the unit 1 (hence Axiom 1). The Skein relation is the important one, and does all the work to compute stuff.
 
-\begin{remark}
-  The Skein relation does all of the heavy lifting here.
-
-  It's trivial to satisfy the first relation, and what are you even doing if your map doesn't satisfy the second relation.
-\end{remark}
-
-\subsection{Just how sensitive is the Jone's polynomia}
+\subsection{Just how sensitive is the Jones polynomial}
 
 
 \begin{question}
-  Does $V$ `detect' the unknot? $V_K = 1 \implies K \cong 0$?
+  Does $V$ `detect' the unknot? $V_K = 1 \implies K \cong 0$? \textit{This is still an open question!!!}
 \end{question}
-
-This is still an open question!!!
 
 \begin{question}
   Can you read off the unknotting number from the Jones polynomial?
   The Skein relation gives us reason to think that this might be the case.
 \end{question}
 
-
 There is an even more powerful object we could map the knots into, called the Khovonav homology.
 We won't be able to get into it in this class, but it essentially maps into some system of groups.
-The Khovonav homology detects the unknot.
+And the reason we care? Khovonav homology is a ``generalization'' of the Jones polynomial, and detects the unknot.
 
-Thistelthwaite found a 2-component link $L$ such that $V_L = V_{0 0}$. Thus the Jone's polynomial is not
-sensitive enough to detect the unlink.
+Thistelthwaite found a 2-component link $L$ such that $V_L = V_{0 0}$. Thus the Jones polynomial is not
+sensitive enough to detect the unlink. Does that make the ``detecting unknot'' conjecture more suspicious?
 
+\bigskip
+\textbf{Mutation} is an aptly named operation that given $K$ outputs $M(K)$ produced by
+drawing a box around a region of the knot and rotating it by $180^o$ in `different ways'. Specifically, the region of the knot is a tangle with four strands exiting the box, and we rotate to match up those endpoints on the box.
 
-Mutation is an aptly named operation that given $K$ outputs $M(K)$ produced by
-drawing a box around a region of the knot and rotating it by $\pi$ in `different ways'.
-$V_{M(K)} = V_K$. Uh oh.
+ANNOYING FACT: $V_{M(K)} = V_K$.
 
 \subsection{Other polynomials}
 
-$K_-, K_+, K_0$ denote the undercrossing, overcrossing, and no crossing respectively
+$K_-, K_+, K_0$ denote the under-crossing, over-crossing, and no-crossing respectively. Again, to clarify, we take some knot and look at a single crossing, so that $K_+$ is the knot and $K_-$ is swapping the crossing and $K_0$ is removing the crossing.
 
 \begin{itemize}
   \item Jones $V_K(t) \in \Z[\sqrt{t}, \frac{1}{\sqrt{t}}]$
@@ -988,14 +987,14 @@ $K_-, K_+, K_0$ denote the undercrossing, overcrossing, and no crossing respecti
 
 
 \begin{exercise}
-  Show that $P(K \# J) = P(K) P(J)$ in two ways: by definition of $P$ and for $V$ using the definition of the bracket polynomials.
+  Show that $P(K \# J) = P(K) P(J)$ in two ways: by definition of $P$ and for $V$ using the definition of the bracket polynomial.
 \end{exercise}
 
 
 \begin{remark}
-  $\nabla_K = 1 \iff G_k \defeq \pi_1(\R^3 - K) \text{ is perfect}$. Perfect means that $G$ is equal to it's commutator subgroup.
+  $\nabla_K = 1 \iff G_K \defeq \pi_1(\R^3 - K) \text{ is perfect}$. Perfect means that $G$ is equal to its commutator subgroup $[G,G]$.
 
-  Thus, the Alexander polynomial cannot detect the unknot
+ Thus, the Alexander polynomial cannot detect the unknot.
 \end{remark}
 
 

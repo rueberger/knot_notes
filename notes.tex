@@ -998,4 +998,101 @@ $K_-, K_+, K_0$ denote the under-crossing, over-crossing, and no-crossing respec
 \end{remark}
 
 
+
+\clearpage
+\section{3/1: Quandles}
+
+Discuss random math questions about knots. Does $\pi_1(\R^3-K)$ or $V_K$ detect mirrors of knots, or mutants?
+
+Start thinking what topics you want to study for the final project, and who you want to work with.
+
+
+\subsection{Generalized colorings}
+
+Recall: \textbf{3-coloring} of knot diagram
+
+1) each strand assigned color R G B
+
+2) use all 3 colors, i.e. use at least 2 colors
+
+3) each crossing has all 3 colors or only 1 color
+
+\bigskip\noindent
+Generalize to \textbf{$\Z_p$-labeling} ($p$ prime)
+
+1) assign element in $\Z_p=\lbrace0,\ldots,p-1\rbrace$
+
+2) use at least 2 elements
+
+3) If $y$ crosses under $x$ to become $z$, then $z\equiv 2x-y\mod p$
+
+\bigskip\noindent
+Generalize to \textbf{quandle}
+
+Motivate: group has 2 operations via conjugation, $(x,y)\mapsto y^{-1}xy=:x\rhd y$ and $yxy^{-1}=:x\rhd^{-1}y$ which satisfy
+
+1) $x\rhd x=x$
+
+2) $(x\rhd y)\rhd^{-1}y=x=(x\rhd^{-1}y)\rhd y$
+
+3) $(x\rhd y)\rhd z=(x\rhd z)\rhd(y\rhd z)$
+
+A \textbf{quandle} is a set with 2 binary operations satisfying the above. ``Isomorphism'' for quandles is the analog of that of groups.
+
+\begin{ex}
+$Conj(G)$ for group $G$ above.
+\end{ex}
+
+\begin{ex}
+$\Z_p$-labeling is quandle associated to ring $\Z_p$ with $x\rhd y=-x+2y=x\rhd^{-1}y$
+\end{ex}
+
+
+
+
+\clearpage
+\section{3/3: Knot Quandle}
+
+The knot quandle $Q(K)$ is the set of labels of the strands for the oriented diagram of $K$, such that if $a$ crosses under $b$ to become $c$ then you get $a\rhd b$, and if $a$ crosses over $b$ to become $c$ then you get $b\rhd^{-1}a$.
+
+\bigskip
+$Q(K)$ is an isotopy-invariant: R1 and R2 and R3 are the Axioms 1 and 2 and 3 above
+
+\bigskip
+More importantly, $Q(K)$ is a complete invariant: $Q(K)\cong Q(J)$ iff $K\cong J$.
+
+\begin{ex}
+$Q(\text{trefoil})\cong Conj(\Z_3)/\lbrace\rhd=\rhd^{-1}\rbrace$
+\end{ex}
+
+\subsection{Geometric Motivation}
+
+A \textit{meridian} $\gamma\in\pi_1(\R^3-K)$ is a loop (with basepoint $\ast)$ that has linking number $+1$ with a given strand of $K$. View $K$ and $\gamma$ as the independent loops of a torus.
+
+The \textit{Wirtinger presentation} had generators $a,b,c,\ldots$ being meridians up to homotopy, such that if $a$ crosses under $b$ to become $c$ then
+
+$b^{-1}ab=c$ if crossing is positive
+
+$bab^{-1}=c$ is crossing is negative
+
+Well, the knot group cannot distinguish certain knots, such as the Square Knot from the Granny Knot. Analyzing this example further, we see that the isomorphism of their knot groups won't make the meridians to the meridians.
+
+\bigskip
+So $Q(K)$ is the analog of $\pi_1(\R^3-K)$ except instead of using meridians, you use ``disks with paths''. Meridians can be homotopic while the associated ``disks with paths'' are non-homotopic, and this extra obstruction makes $Q(K)$ more sensitive to the richness of knots than the knot group.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \end{document}

@@ -1040,11 +1040,11 @@ Motivate: group has 2 operations via conjugation, $(x,y)\mapsto y^{-1}xy=:x\rhd 
 A \textbf{quandle} is a set with 2 binary operations satisfying the above. ``Isomorphism'' for quandles is the analog of that of groups.
 
 \begin{ex}
-$Conj(G)$ for group $G$ above.
+$Conj(G)$ for group $G$ above (if $G$ is abelian then $\rhd=\rhd^{-1}$)
 \end{ex}
 
 \begin{ex}
-$\Z_p$-labeling is quandle associated to ring $\Z_p$ with $x\rhd y=-x+2y=x\rhd^{-1}y$
+$\Z_p$-labeling of knot can be viewed as the quandle associated to the ring $\Z_p$ (unit $q=-1$) with $x\rhd y=-x+2y=x\rhd^{-1}y$
 \end{ex}
 
 
@@ -1053,7 +1053,9 @@ $\Z_p$-labeling is quandle associated to ring $\Z_p$ with $x\rhd y=-x+2y=x\rhd^{
 \clearpage
 \section{3/3: Knot Quandle}
 
-The knot quandle $Q(K)$ is the set of labels of the strands for the oriented diagram of $K$, such that if $a$ crosses under $b$ to become $c$ then you get $a\rhd b$, and if $a$ crosses over $b$ to become $c$ then you get $b\rhd^{-1}a$.
+The \textit{knot quandle} $Q(K)$ is a particular quandle associated to a knot $K$. It consists of a set of labels of the strands for an oriented diagram of $K$, such that if $a$ crosses under $b$ to become $c$ then you get $a\rhd b$, and if $a$ crosses over $b$ to become $c$ then you get $b\rhd^{-1}a$.
+
+If we ignore the orientation, then we get the \textit{involuntary} knot quandle $IQ(K):=Q(K)/\lbrace\rhd=\rhd^{-1}\rbrace$.
 
 \bigskip
 $Q(K)$ is an isotopy-invariant: R1 and R2 and R3 are the Axioms 1 and 2 and 3 above
@@ -1062,7 +1064,7 @@ $Q(K)$ is an isotopy-invariant: R1 and R2 and R3 are the Axioms 1 and 2 and 3 ab
 More importantly, $Q(K)$ is a complete invariant: $Q(K)\cong Q(J)$ iff $K\cong J$.
 
 \begin{ex}
-$Q(\text{trefoil})\cong Conj(\Z_3)/\lbrace\rhd=\rhd^{-1}\rbrace$
+$IQ(\text{trefoil})\cong Conj(\Z_3)$
 \end{ex}
 
 \subsection{Geometric Motivation}
@@ -1075,10 +1077,12 @@ $b^{-1}ab=c$ if crossing is positive
 
 $bab^{-1}=c$ is crossing is negative
 
-Well, the knot group cannot distinguish certain knots, such as the Square Knot from the Granny Knot. Analyzing this example further, we see that the isomorphism of their knot groups won't make the meridians to the meridians.
+Well, the knot group cannot distinguish certain knots, such as the Square Knot from the Granny Knot. Analyzing this example further, we see that the isomorphism of their knot groups won't send the meridians to the meridians.
 
 \bigskip
 So $Q(K)$ is the analog of $\pi_1(\R^3-K)$ except instead of using meridians, you use ``disks with paths''. Meridians can be homotopic while the associated ``disks with paths'' are non-homotopic, and this extra obstruction makes $Q(K)$ more sensitive to the richness of knots than the knot group.
+
+That is, the \text{knot quandle} is the fundamental ``quandle'' of the knot complement, while the \textit{knot group} is the fundamental group of the knot complement. This quandle is a ``larger'' algebraic object than the group, and captures all information that the group doesn't recognize. For example, the knot group doesn't tell apart $K$ from $K^\ast$.
 
 
 

@@ -40,6 +40,7 @@
 \DeclareMathOperator{\Arg}{Arg}
 \DeclareMathOperator{\parg}{arg}
 \DeclareMathOperator{\Log}{Log}
+\DeclareMathOperator{\lk}{lk}
 
 \theoremstyle{plain}
 \newtheorem{thm}{Theorem}
@@ -1005,10 +1006,10 @@ $K_-, K_+, K_0$ denote the under-crossing, over-crossing, and no-crossing respec
 Discuss random math questions about knots:
 
  Is Alexander polynomial useful if we already knot about the Jones polynomial?
- 
+
  Can we define a polynomial for wild knots? Perhaps a limit of Jones polynomials for recursively defined wild knots.
- 
- 
+
+
 \bigskip
 Start thinking what topics you want to study for the final project, and who you want to work with.
 
@@ -1095,18 +1096,77 @@ We have seen now seen these weird algebraic objects, quandles, appear as a gener
 \end{remark}
 
 
+\section{3/29: post-spring break}
+
+\subsection{Final project groups}
+
+Current listings:
 
 
+\begin{itemize}
+  \item Francesa, Marissa, Kathryn
+  \item Coop (collaborating with someone?)
+  \item Chris, Brandon, Andrew
+  \item Gary, Yitz, Kavya
+  \item Hugo?
+\end{itemize}
+
+Timeline:
 
 
+May 15th is the hard cut-off, so Chris can submit grades in time.
+
+But Chris highly suggests we get in by the 5th.
+
+Somewhere between now and then, submit a progress report
+
+\subsection{Invariants from Matrices}
+
+For now let, $K$ the figure 8 knot, but everything that we say will hold for oriented connected knots.
 
 
+\begin{exercise}
+  Draw a Seifert surface for $K$. For the figure eight this will be diffeomorphic to a disk with two `handles' attached that have a twist in them. Show that this surface has genus 1. Call this surface $S_8$.
+\end{exercise}
+
+Recall that the genus of a knot is the minimal genus of all seifert surfaces for that knot.
+Since we know that the figure eight knot is not the unknot, and there's a theorem that the unknot is the only knot with genus 0, we now know that the figure eight knot has genus 1.
+
+There are two loops that will contribute to the fundamental group for $S_8$, they go around each handle. Call them $\gamma_1, \gamma_2$. These loops are `independent' in the sense that they are the generators for the $\pi_1(S_8)$, this
+is important for what follows to be well-defined.
+Formally, these loops are smooth maps $S^1 \to S_8$.
+
+In general, a Seifert surface $S$ will have $2g(S)$ `independent' loops, $\gamma_1, \ldots, \gamma_{2g}$
+
+We want to compute the linking number $\lk(\gamma_1^{+}, \gamma_2)$ viewed inside $\R^3$, where the $+$ superscript on $\gamma_1$ indicates that we're going to `push' it off of $S_8$ along the positive
+(we have an orientation) normal vector of $S_8$. Now it no longer intersects $\gamma_2$ and we can compute the linking number. The linking number is after all a $1 \times 1$ matrix, and linking numbers are knot invariants so we've
+obtained the first matrix invariant of the day.
+
+We can now obtain larger matrix invariants by looking at all possible combinations of $\gamma_1$ and $\gamma_2$
 
 
+\begin{equation}
+\left[
+\begin{matrix}
+  &\lk(\gamma_1^+, \gamma_1) &\lk(\gamma_1^+, \gamma_2) \\
+  &\lk(\gamma_2^+, \gamma_1) &\lk(\gamma_2^+, \gamma_2)
+\end{matrix}
+\right]v
+\end{equation}
 
+This is our first example of a Seifert matrix.
 
+Recall $G_{ab} = G / [G, G]$ (quotient out the commutative subgroup). In general, we work with $\pi_1{(S)}_{ab} = H_1(S) \cong \Z^{2g}$. The `independent' loops that we would like to work are precisely those that generate $\pi_1(S)$ and
+are nonzero in $\pi_1{(S)}_{ab}$. Let $\set{\gamma_i}$ be the set of such$2g(S)$ `indepenent' generators that exist.
 
+We define the matrix elements of the Seifert surface as ${(M_S)}_{i,j} = \lk(\gamma_i^+, \gamma_j)$. This matrix depends on $g(S)$, and probably on $S$. At the end of the day, for two Seifert surfaces $S, S^\prime$ of the same knot,
+$M_S$ and $M_{S^\prime}$ \emph{must} be related in some way.
 
+Call $\sigma(M_{S_K})$ the signature of the Seifert matrix. Chris believes that its the number of negative eigenvalues $-$ the number of positive eigenvaluoes. This is an invariant so we can speak meaningfully of $\sigma(K)$.
 
+On Thursday we'll get more invariants out of $M_S$, and discuss how useful they are.
+
+On a final note, it's much less cumbersome to work with $\pi_1{(S)}_{ab}$ than directly with $\pi_1(S)$. The reason for this is that for \emph{any} group, we can find a surface such that $\pi_1(S)$ is that group. However,
+by the Fundamental theorem of finitely generated abelian groups, $\pi_1(S)_{ab}$ is either $\Z^n$ or $\Z / n\Z$
 
 \end{document}

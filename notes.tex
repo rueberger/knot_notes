@@ -1099,7 +1099,57 @@ We have seen now seen these weird algebraic objects, quandles, appear as a gener
 \end{remark}
 
 
-\section{3/29: post-spring break}
+\clearpage
+\section{3/29+31: Invariants via Seifert Matrix (lecture notes prepared by Chris)}
+
+Assume $K$ is connected, and oriented.
+
+\subsection{Signature}
+
+Take (for example) the Figure 8 knot $K$. Here is a particular Seifert surface $S$ for it:
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=6cm]{Seifert.png}
+\end{figure}
+
+Our $S$ has genus 1 (\textbf{Question:} Is it also the genus of the Figure 8 knot?) It is a disk attached with 2 handles, each handle having 2 twists in it.
+
+Fixing a basepoint somewhere, there are two independent loops $\gamma_1,\gamma_2\subset S$ wrapping around each handle. We can compute a \textit{linking number} between them as follows. Take $\gamma_1$, push it off of $S$ (sitting inside of ambient $\R^3$) in the positive direction normal to $S$, and call that loop $\gamma_1^+$. Then we're done: $lk(\gamma_1^+,\gamma_2)$.
+
+\bigskip
+In general, a Seifert surface of genus $g$ will have $2g$ ``independent'' loops (wrapping around handles). Group-theoretically, take the abelianization of $\pi_1(S)$, denoted $H_1(S)$. This turns out to be isomorphic to the group $\Z^{2g}$, and a basis $\gamma_1,\ldots,\gamma_{2g}$ are our desired loops.
+
+\bigskip
+The \textit{Seifert matrix} $M_S$ has $ij$-entry $lk(\gamma_i^+,\gamma_j)$. Note that this makes sense when $i=j$, and that $M_S$ depends on $S$.
+
+\bigskip
+How can we get something that depends only on $K$? Take that matrix $M_S$, and compute its signature $\sigma(M_S)$ -- that is called the \textit{signature} of the knot. It is an invariant, but we will not prove it (we would need to relate the matrices $M_S$ and $M_{S'}$ for different Seifert surfaces).
+
+
+
+\subsection{Polynomial}
+\textit{Conway-Alexander polynomial} $\triangle_K(t)\in\Z[t^{1/2},t^{-1/2}]$ of (oriented) knot satisfies
+
+Skein relation $\triangle_{L_+}-\triangle_{L_-}=(t^{1/2}-t^{-1/2})\triangle_{L_0}$
+
+Normalization $\triangle_O=1$
+
+\noindent Remember: $L_+$ denotes the knot and looks at a positive crossing, $L_-$ swaps that crossing (making it negative), and $L_0$ removes that crossing (coherently with knot's orientation).
+
+\bigskip
+This isn't as ``good'' as the Jones polynomial, but we're talking about it as an excuse to talk about the Seifert matrix:
+
+$\triangle_K(t)=\det(t^{1/2}M_S-t^{-1/2} M_S^T)$
+
+\begin{exercise}
+If $K$ is connected and $S$ has genus $g$, then $\triangle_K(t)=t^{-g}\det(tM_S-M_S^T)$.
+\end{exercise}
+
+
+
+
+\section{3/29: in class notes}
 
 \subsection{Final project groups}
 
@@ -1173,7 +1223,43 @@ On a final note, it's much less cumbersome to work with $\pi_1{(S)}_{ab}$ than d
 by the Fundamental theorem of finitely generated abelian groups, $\pi_1(S)_{ab}$ is either $\Z^n$ or $\Z / n\Z$
 
 
-\section{4/5: Surgery }
+\clearpage
+\section{4/5: Dehn surgery (lectures notes prepared by Chris)}
+
+View a knot $K$ in $S^3$ instead of $\R^3$, by adding a point at infinity.
+
+The boundary of a (small) tubular neighborhood $N_K$ of $K$ in $S^3$ is a (knotted) torus $\partial N_K\approx\T^2$. There are two generators of $\pi_1(\T^2)\cong\Z\oplus\Z$, namely a copy $\gamma_K$ of $K$ (that runs along the torus) and a meridian $\gamma_m$ (wrapping around an arm of the torus) that links $K$ positively once.
+
+Take $S^3-N_K$ and ``glue back in'' $N_K$ by identifying their boundary torus. This gluing is given by a diffeomorphism (i.e. homeomorphism with all derivatives defined) $f:\T^2\to\T^2$ of the torus! Assume that $f$ maps $\gamma_K$ to $\gamma_K$, and maps $\gamma_m$ to some $(p,q)$-torus knot on $\T^2$, meaning $f(\gamma_m)=p\gamma_K+q\gamma_m$.
+
+\bigskip
+We just operated in the sense of doing \textbf{Dehn surgery}.
+
+\bigskip
+If the surgery/gluing is trivial, i.e. the diffeomorphism is the identity, i.e. $p=0$ and $q=1$, then you get back $S^3$. Otherwise, you will get something else!
+
+\begin{thm}
+If $f$ is not the identity, you cannot get $S^3$ back.
+\end{thm}
+\begin{proof}
+Note that $S^3-N_K$ is the same as the knot complement of $K$ (up to deformation). If there was a nontrivial Dehn surgery that also gives $S^3$, then $S^3-(S^3-N_K)$ is a solid torus, but in two different ways (different solid tori, one of which is $N_K$ (for the trivial surgery)). Since the ``core'' of a solid torus is a knot, this means we have two different knots with the same knot complement. Thanks to the Gordon-Luecke theorem, this can't happen.
+\end{proof}
+
+\begin{thm}[Lickorish-Wallace]
+Any compact 3-manifold can be obtained by performing Dehn surgery on a link $L\subset S^3$.
+\end{thm}
+
+Get our research-minds thinking (they should ALWAYS be thinking). How is this all useful? We can study 3-dimensional spaces via 1-dimensional spaces!
+
+Is the surgery unique? That is, are there different Dehn surgeries on different links that give the same 3-manifold? YES. The process of identifying which links/surgeries give the same 3-manifold is \textbf{Kirby Calculus}, invented by our fellow UC Berkeley professor Rob Kirby.
+
+\begin{exercise}
+Why did we use $S^3$ and not $\R^3$ for the ambient manifold?
+\end{exercise}
+
+
+
+\section{4/5: Surgery in class notes}
 
 Is everyone okay with sharing their projects (for your peers curiousity)?
 
@@ -1227,6 +1313,112 @@ Okay, cool. What other sorts of spaces can we get with different $g$?
 \end{question}
 
 
+\clearpage
+\section{4/7: Other types of ``knotting''}
+
+Why do we look at $S^1\hookrightarrow\R^3$ versus any other types of embeddings?
+
+
+\subsection{Range $\R^n$}
+
+$S^1\hookrightarrow\R^{n>3}$ has no ``knotting'' behavior. The extra dimensions (above 3) can be used to push over-crossings to under-crossings and allow us to isotope all embeddings to the standard unknot.
+
+Analogy: We cannot move $\lbrace-1\rbrace$ to $\lbrace 1\rbrace$ on the punctured line $\R-\lbrace0\rbrace$. But look at $\R^2-\lbrace(0,0)\rbrace$ and view $\R-\lbrace0\rbrace$ as the punctured x-axis, where $\lbrace-1\rbrace$ becomes $\lbrace(-1,0)\rbrace$ and $\lbrace1\rbrace$ becomes $\lbrace(1,0)\rbrace$. Now we can move the points around the origin.
+
+\bigskip
+$S^1\hookrightarrow \R^1$ does nothing but collapse the circle.
+
+\bigskip
+$S^1\hookrightarrow \R^2$ has no crossings. The theory reduces to two key results:
+
+1) \textit{Jordan Curve Theorem} -- the knot separates the plane into two regions
+
+2) \textit{Schonflies Theorem} -- one of those regions is homeomorphic to a disk
+
+
+\subsection{Range $X$}
+
+$S^3$ is ``nothing more'' than $\R^3$ with an additional point, so that all ``infinities'' are identified with each other. The region becomes bounded, allowing more tools to be built to study knots. \textit{\textbf{Exercise:} Can you unknot $K\subset S^3$ if $K$ is knotted in $\R^3$?}
+
+\bigskip
+$S^1\hookrightarrow S^1\times S^2$ is interesting. View $S^1\times S^2$ as the solid region between two concentric spheres, where those two spheres are identified with each other, i.e. take $[0,1]\times S^2$ and identify $\lbrace(0,x)\rbrace\sim\lbrace(1,x)\rbrace$ for all $x\in S^2$. Consider any ``tangle'' as a single (knotted) strand $[0,1]\times S^2$ whose endpoints on $\lbrace0,1\rbrace\times S^2$ are identified... it's isotopic to the unknot!
+
+\subsection{Domain $S^i$}
+
+Analyze the linking behavior of knots of the form $S^0\hookrightarrow S^1$ or $S^0\hookrightarrow S^2$, based on the number of (pairs of) points and their locations.
+
+\bigskip
+$S^2\hookrightarrow\R^3$ has no ``knotting'' behavior, because there are two few dimensions to move around in, just like $S^1\hookrightarrow\R^2$. But $S^2\hookrightarrow\R^4$ works, and this is a special case of \textbf{higher-dimensional knot theory}: $S^n\hookrightarrow\R^{n+2}$. Think of $\R^4$ as 3-dimensional space moving through time, and think of $S^2$ as a collection of circles. Now consider embeddings $S^2\subset\R^4$ as a ``movie'' of embeddings of $S^1\subset\R^3$ where unknots turn into knots and back to unknots.
+
+
+\subsection{Domain $X$}
+
+More generally, there is knotting of objects $X\hookrightarrow\R^n$ for appropriate $n$ based on the dimension of $X$. For example, tori can be knotted in $\R^3$, since tori are nothing more than the boundaries of thickened knots!
+
+\textit{\textbf{Exercise:} Find two 2-holed tori that are not isotopic to each other in $\R^3$.}
+
+
+\clearpage
+\section{4/12: Jones' original paper}
+
+Backtrack to braid theory and the Jones polynomial. Let's connect them, and in particular, see how Jones originally defined his polynomial (before Kauffman did)!
+
+\begin{definition}
+The \textit{Jones algebra} $A_n$ for $n>1$ is the free additive algebra on the (multiplicative) generators $e_1,\ldots,e_{n-1}$ viewed as a $\C[\tau,\tau^{-1}]$-module. Here $\tau$ is a variable that commutes with all generators, and the generators satisfy the relations
+
+1) $e_i^2=e_i$
+
+2) $e_ie_{i\pm 1}e_i=\tau e_i$
+
+3) $e_ie_j=e_je_i$ when $|i-j|>2$
+\end{definition}
+
+Jones noticed that $A_n$ looks like the Braid group $B_n$. He constructed a particular map $\rho:B_n\to A_n$. He also constructed a particular ``trace'' map $tr:A_n\to\C[\tau,\tau^{-1}]$, which means $tr(ab)=tr(ba)$. So we get a trace map
+$$tr\circ\rho:B_n\to\C[\tau,\tau^{-1}]$$
+and this is the \textit{Jones polynomial} after a particular normalization!
+
+\bigskip
+Let's analyze this more closely. By Alexander's theorem, any oriented link is given by the closure $\hat\sigma$ of some braid $\sigma$. The non-uniqueness is handled by Markov's theorem, so we have to make sure that $tr\circ\rho$ is independent of the ``Markov moves'', in order to get an invariant of the link (closure of the braid). Let's look at the Markov moves:
+
+1) Vacuously, two braids are identified up to isotopy-equivalence in the braid group.
+
+2) Conjugate a braid $\sigma\in B_n$ by another braid $b\in B_n$. \textbf{Exercise:} $\widehat{b\sigma b^{-1}}=\hat\sigma$
+
+3) An actual \textit{Markov move}: Given $\sigma\in B_n$, view it inside $B_{n+1}$ by attaching an isolated strand at the end, take the generator $\sigma_n\in B_{n+1}$, and form $\sigma\sigma_n^{\pm 1}$. \textbf{Exercise:} $\widehat{\sigma\sigma_n^{\pm 1}}=\hat\sigma$
+
+4) The ``inverse'' \textit{Markov move}, undoing (3), where a braid of the form $\sigma\sigma_n^{\pm 1}$ becomes $\sigma$.
+
+\bigskip
+The definition of ``trace'' already handles conjugation of braids. To handle the actual Markov moves, Jones' trace map $tr$ for $A_n$ is chosen to satisfy the additional property $tr(we_i)=\tau\cdot tr(w)$ whenever $w\in A_{i-1}$. To get our desired link invariant, we need to normalize the trace map to account for these $\tau$'s that appear under Jones' additional property when a Markov move occurs.
+
+\bigskip
+Define the writhe $w(\sigma)$ of a braid $\sigma$ in the same way as the writhe of a knot. Check $w(\sigma)=w(\hat\sigma)$.
+
+\begin{thm}
+$V_{\widehat\sigma}(\tau)=\tau^{-w(\sigma)}tr\circ\rho(\sigma)$
+\end{thm}
+
+
+
+\begin{remark}
+We can do something similar for the Kauffman bracket polynomial, using the \textit{Temperley-Lieb algebra}.
+\end{remark}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\clearpage
+\section{4/14: ???}
 
 
 \end{document}

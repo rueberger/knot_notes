@@ -1151,27 +1151,7 @@ If $K$ is connected and $S$ has genus $g$, then $\triangle_K(t)=t^{-g}\det(tM_S-
 
 \section{3/29: in class notes}
 
-\subsection{Final project groups}
 
-Current listings:
-
-
-\begin{itemize}
-  \item Francesa, Marissa, Kathryn
-  \item Coop (collaborating with someone?)
-  \item Chris, Brandon, Andrew
-  \item Gary, Yitz, Kavya
-  \item Hugo?
-\end{itemize}
-
-Timeline:
-
-
-May 15th is the hard cut-off, so Chris can submit grades in time.
-
-But Chris highly suggests we get in by the 5th.
-
-Somewhere between now and then, submit a progress report
 
 \subsection{Invariants from Matrices}
 
@@ -1210,7 +1190,7 @@ We can now obtain larger matrix invariants by looking at all possible combinatio
 This is our first example of a Seifert matrix.
 
 Recall $G_{ab} = G / [G, G]$ (quotient out the commutative subgroup). In general, we work with $\pi_1{(S)}_{ab} = H_1(S) \cong \Z^{2g}$. The `independent' loops that we would like to work are precisely those that generate $\pi_1(S)$ and
-are nonzero in $\pi_1{(S)}_{ab}$. Let $\set{\gamma_i}$ be the set of such$2g(S)$ `indepenent' generators that exist.
+are nonzero in $\pi_1{(S)}_{ab}$. Let $\set{\gamma_i}$ be the set of such $2g(S)$ `independent' generators that exist.
 
 We define the matrix elements of the Seifert surface as ${(M_S)}_{i,j} = \lk(\gamma_i^+, \gamma_j)$. This matrix depends on $g(S)$, and probably on $S$. At the end of the day, for two Seifert surfaces $S, S^\prime$ of the same knot,
 $M_S$ and $M_{S^\prime}$ \emph{must} be related in some way.
@@ -1220,7 +1200,7 @@ Call $\sigma(M_{S_K})$ the signature of the Seifert matrix. Chris believes that 
 On Thursday we'll get more invariants out of $M_S$, and discuss how useful they are.
 
 On a final note, it's much less cumbersome to work with $\pi_1{(S)}_{ab}$ than directly with $\pi_1(S)$. The reason for this is that for \emph{any} group, we can find a surface such that $\pi_1(S)$ is that group. However,
-by the Fundamental theorem of finitely generated abelian groups, $\pi_1(S)_{ab}$ is either $\Z^n$ or $\Z / n\Z$
+by the Fundamental theorem of finitely generated abelian groups, $\pi_1(S)_{ab}$ is direct sums of either $\Z^n$ or $\Z / n\Z$
 
 
 \clearpage
@@ -1261,7 +1241,7 @@ Why did we use $S^3$ and not $\R^3$ for the ambient manifold?
 
 \section{4/5: Surgery in class notes}
 
-Is everyone okay with sharing their projects (for your peers curiousity)?
+Is everyone okay with sharing their projects (for your peers' curiosity)?
 
 Coming up: Surgery on 3-dim spaces, Jones' paper, knots in other dimensions
 
@@ -1269,7 +1249,7 @@ Coming up: Surgery on 3-dim spaces, Jones' paper, knots in other dimensions
 
 Take $K \subset \R^3 \subset S^3$ (if you're confused how it can be the case that $\R^3 \subset S^3$, think of $\R^2$ and $S^2$ where $S^2$ is obtained from $\R^2$ by `wrapping up' the point at infinity)
 
-Wherein chris struggles to draw a trefoil.
+Wherein Chris struggles to draw a trefoil.
 
 To the prime the discussion of how higher-dimensional manifolds can be knotted, consider $\D^2 \times S^1$ ($\D^2$ is the unit disk). For any knot $K$ this construction gives a tubular neighborhood of $K$, let's
 denote it $\NN_K$.
@@ -1281,7 +1261,7 @@ Fact: $S^3 \setminus \NN_k$ is a solid torus. More precisely, it's closure is ($
 a donut, and going through the hole of the donut is a mega-donut going off to infinity and filling all of the space in the complement of the normal donut. But remember $\R^3 \subset S^3$ not the other way around, so you're cheating
 a bit when you visualize it this way.
 
-Now let's do some voodoo nonsense: $S^3 - \NN_k \cup \NN_k = S^3$ where the `union will be along a torus' $\partial \NN_k$ (I'm having a hard time notating this but you should imagine cutting a disk out of a plane
+Now let's do some voodoo nonsense: $(S^3 - \NN_k) \cup \NN_k = S^3$ where the `union will be along a torus' $\partial \NN_k$ (I'm having a hard time notating this but you should imagine cutting a disk out of a plane
 and putting it back; the interesection is the boundary of the disk you cut out, so the `gluing' operation amounts to specifying how the boundary is mapped when you put the disk back). For our purposes the gluing
 operation is a homeomorphism $g: \T^2 \to \T^2$ (because the boundary we glue along is a torus). In the case where $g$ is the identity, the gluing operation gives us back $S^3$, but in general $g$ will wangjangle
 $\NN_k$ in some complicated fashion to fit the boundary and do all sorts of crazy things to the topology of $(S^3 \setminus \NN_k) \cup_g \NN_k$ (here $\cup_g$ means glue as prescribed by $g$).
@@ -1299,7 +1279,7 @@ Is there any other $g$ that also gives $X = S^3$ after gluing?? The answer turns
 \begin{proof}
 Note that $S^3 \setminus \NN_k \cong S^3 \setminus K$ (I'm being sloppy with $\cong$, but you know what I  mean). Suppose there exists $g$ not equal to the identity so that $X \approx S^3$.
 $X \setminus (S^3 \setminus \NN_K) = S^3 \setminus (S^3 \setminus \NN_k) = \NN_k \cong K$, but $X \setminus (S^3 \setminus  \NN_k)$ is a solid torus which can be deformed into a knot $J$.
-$J$ and $K$ have the same complements, which by the Gordon-Lueke theorem means that $J \cong K$ which then implies $g$ has to be the identity. Boom.
+$J$ and $K$ have the same complements, which by the Gordon-Luecke theorem means that $J \cong K$ which then implies $g$ has to be the identity. Boom.
 \end{proof}
 
 Okay, cool. What other sorts of spaces can we get with different $g$?

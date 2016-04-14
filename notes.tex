@@ -1385,7 +1385,7 @@ $V_{\widehat\sigma}(\tau)=\tau^{-w(\sigma)}tr\circ\rho(\sigma)$
 
 
 \begin{remark}
-We can do something similar for the Kauffman bracket polynomial, using the \textit{Temperley-Lieb algebra}.
+We can do something similar for the Kauffman bracket polynomial, using other algebras.
 \end{remark}
 
 
@@ -1397,89 +1397,94 @@ We can do something similar for the Kauffman bracket polynomial, using the \text
 
 
 \clearpage
-\section{4/14: ???}
+\section{4/14: Trichotomy of knots}
 
-Discussion of Whitehead manifold\dots.
-Time is of the essence! Work on your final projects!
+\begin{remark}
+Chris claims that the study of (1-dimensional) knots in the ``Whitehead manifold'' $W$ is nothing more than the study of knots in $\R^3$, even though $W$ is not homeomorphic to $\R^3$. Reasoning: due to $W$ being contractible, there is no ``topology'' to obstruct deforming the knot into a ``Euclidean patch'' sitting inside of $W$.
+\end{remark}
 
-\subsection{Classifying knots}
-
-\subsubsection{$(p,q)$-torus knots}
-
-Pros:
-
-\begin{itemize}
-  \item Easily drawn (Chris in particular likes this)
-  \item Crossings are obvious
-\end{itemize}
-
-Cons:
-
-
-\begin{itemize}
-  \item Often late to lab meeting
-\end{itemize}
-
-Here, $p$ refers to wrappings around the meridian and $q$ refers to the number of times the center hole is circled. In particular, a trefoil is a $(3,2)$-torus knot.
-This construction is not an injective mapping into the space of knots: $(1,1), (0,1), (1, 0)$ are all the unknot. Also $(p,q) \cong (q, p)$
-
-\subsubsection{Satellite knots}
+\subsection{$(p,q)$-torus knots}
 
 Pros:
 
 \begin{itemize}
-  \item Gives simple procedure for producing knots from knots.
+  \item Easy description: single circle ``wraps'' in only two possible directions.
+  \item Crossings are easily studied.
+\end{itemize}
+
+Here, $p$ refers to wrappings around the meridian and $q$ refers to the number of times the center hole is circled, and $gcd(p,q)=1$. In particular, a trefoil is a $(3,2)$-torus knot.
+This construction is not an injective mapping into the space of knots: $(1,1), (0,1), (1, 0)$ are all the unknot.
+
+Also, $(p,q) \cong (q, p)$.
+
+Also, torus knots are prime.
+
+\subsection{Satellite knots}
+
+Pros:
+
+\begin{itemize}
+  \item Gives simple procedure for producing knots from other knots.
 \end{itemize}
 
 Cons:
 
 \begin{itemize}
-  \item Can be difficult to draw
+  \item Difficult to know when a given knot is a Satellite, because you need two other knots!
 \end{itemize}
 
-To construct a satellite knot, take any knot $K$ and view it as sitting inside of some solid torus. Now take the solid torus and knot it into the tubular neighborhood of some other knot $J$. This warps $K$ into some possibly different knot, let's call it
+To construct a satellite knot, take any nontrivial knot $K$ and view it as sitting inside of some solid torus. Now take the solid torus and knot it into the tubular neighborhood of some other nontrivial knot $J$. This warps $K$ into some possibly different knot, let's call it
 $\Sat_{J}(K)$.
 
+There is ambiguity in the notation $\Sat_J(K)$, because $K$ can sit inside of a solid torus in multiple different ways!
+
 \begin{question}
-  Is it possible that $c(\Sat_{J}(K)) \leq c(K)$? Does it depend on $J$?
+  Is it true that $c(K)\le c(\Sat_{J}(K))$? Does $c(\Sat_{J}(K))$ depend on $J$?
 \end{question}
-
-Open problem: given a knot, figure out what type it falls into.
-
-One result:
 
 
 \begin{prop}
-  Every composite knot is satellite knot. In particular $K_1 \# K_2 = \Sat_{K_2}(K_1)$. This is easy to see if you draw a diagram
+  Every composite knot is satellite knot. In particular $K_1 \# K_2$ is of the form $\Sat_{K_2}(K_1)$. To see this, stretch out an arc of $K_1$, so that the majority of $K_1$ is in one small region of the solid torus while the single arc wraps around the hole of the torus. 
 \end{prop}
 
-Whitehead doubling:
-Take the unknot and rearrange it so the ends are `linked' and the two strands wrap around, then put that inside a torus. The satellite for this unknot is the whitehead double.
+\textit{Whitehead doubling:}
+$Wh(K)$ is of the form $\Sat_K(O)$, where the description of the unknot $O$ (sitting inside of the solid torus) is really two strands that wrap around the hole of the solid torus and ``hook'' together.
 
-So it seems like Satellite knots are a pretty broad class, whereas $(p,q)$ torus knots are much more restricted.
+Equivalently, take $K$ and ``double'' the string and then ``hook'' those two strings together somewhere. In other words, I took two strands that followed along $K$ and then hooked the two strands (in order to obtain a single knot).
+
+\bigskip
+Moral: Satellite knots are a pretty broad class, whereas $(p,q)$ torus knots are much more restricted.
 
 \subsubsection{Hyperbolic knots}
 
-\begin{thm}
+\begin{thm}[William Thurston]
   If a knot $K$ is neither a $(p,q)$-torus knot or a satellite knot, then it is a hyperbolic knot.
 \end{thm}
 
-This class dwarfs the other classes in size. There's some statement like, as the number of crossings grows, the probability of being a hyperbolic knot asymptotically approaches 1.
+This class dwarfs the other classes in size. There is reason to believe something along the lines of: as the number of crossings grows, the probability of being a hyperbolic knot asymptotically approaches 1.
 
 \begin{definition}
   A knot $K$ is hyperbolic if $\R^3 \setminus K$ has a hyperbolic metric.
 \end{definition}
 
 
-\begin{exercise}
-  Learn Riemannian and Hyperbolic geometry, then show that the figure-8 knot is hyperbolic.
-\end{exercise}
+\begin{ex}
+The figure-8 knot is hyperbolic. One potential (but possibly impossible) way to do this is: Check that the figure-8 could not arise from a satellite procedure (this is doable if the satellite procedure does \textit{not} decrease crossings), and easily check that the figure-8 cannot be $(p,q)$-torus.
+\end{ex}
 
 
 \begin{cor}
-  Hyperbolic knots are prime.
+  Hyperbolic knots are prime. (\textit{proof:} composite knots are satellites)
 \end{cor}
 
+This is counterintuitive: It suggests that there are many more prime knots than composite knots! (As opposed to prime numbers.) 
+
+As a result, expect many instances of the form $K_1\# K_2\cong K_3\# K_4$ (for $K_i$ prime).
+
+
+\subsection{Thoughts and Interpretations}
+
+So every (connected) knot falls into one of these 3 categories. That's simple. But each category can be very complex (except maybe for torus knots). That's hard.
 
 
 \end{document}

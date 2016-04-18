@@ -1066,13 +1066,15 @@ $\Z_p$-labeling of knot can be viewed as the quandle associated to the ring $\Z_
 
 The \textit{knot quandle} $Q(K)$ is a particular quandle associated to a knot $K$. It consists of a set of labels of the strands for an oriented diagram of $K$, such that if $a$ crosses under $b$ to become $c$ then you get $a\rhd b$, and if $a$ crosses over $b$ to become $c$ then you get $b\rhd^{-1}a$.
 
-If we ignore the orientation, then we get the \textit{involuntary} knot quandle $IQ(K):=Q(K)/\lbrace\rhd=\rhd^{-1}\rbrace$.
+And we get the \textit{involuntary} knot quandle $IQ(K):=Q(K)/\lbrace\rhd=\rhd^{-1}\rbrace$.
 
 \bigskip
 $Q(K)$ is an isotopy-invariant: R1 and R2 and R3 are the Axioms 1 and 2 and 3 above! Beautiful!
 
 \bigskip
-More importantly, $Q(K)$ is a complete invariant: $Q(K)\cong Q(J)$ iff $K\cong J$.
+More importantly, $Q(K)$ is a complete invariant (up to reversing orientation of $\R^3$):
+
+\indent\indent$Q(K)\cong Q(J)$ iff $K\cong J$ or $K\cong J^\ast$ or $K\cong J^{-1}$.
 
 \begin{ex}
 $IQ(\text{trefoil})\cong Conj(\Z_3)$
@@ -1093,7 +1095,7 @@ Well, the knot group cannot distinguish certain knots, such as the Square Knot f
 \bigskip
 So $Q(K)$ is the analog of $\pi_1(\R^3-K)$ except instead of using meridians, you use ``disks with paths''. Meridians can be homotopic while the associated ``disks with paths'' are non-homotopic, and this extra obstruction makes $Q(K)$ more sensitive to the richness of knots than the knot group.
 
-That is, the \text{knot quandle} is the ``fundamental quandle'' of the knot complement, while the \textit{knot group} is the fundamental group of the knot complement. This quandle is a ``larger'' algebraic object than the group, and captures all information that the group doesn't recognize. For example, the knot group doesn't tell apart $K$ from $K^\ast$.
+That is, the \text{knot quandle} is the ``fundamental'' quandle of the knot complement, while the \textit{knot group} is the ``fundamental'' group of the knot complement. This quandle is a richer algebraic object than the group, and captures (almost) all information that the group doesn't recognize. (``Almost all'' because neither can distinguish mirrors nor inverses.)
 
 \begin{remark}
 We have seen now seen these weird algebraic objects, quandles, appear as a generalization of \textit{colorings} as well as $\pi_1$ of the knot / knot complement. \textbf{Any other way for quandles to appear in knot theory?}
@@ -1348,7 +1350,7 @@ More generally, there is knotting of objects $X\hookrightarrow\R^n$ for appropri
 Backtrack to braid theory and the Jones polynomial. Let's connect them, and in particular, see how Jones originally defined his polynomial (before Kauffman did)!
 
 \begin{definition}
-The \textit{Jones algebra} $A_n$ for $n>1$ is the free additive algebra on the (multiplicative) generators $e_1,\ldots,e_{n-1}$ viewed as a $\C[\tau,\tau^{-1}]$-module. Here $\tau$ is a variable that commutes with all generators, and the generators satisfy the relations
+The \textit{Temperley-Lieb algebra} $A_n$ for $n>1$ is the free additive algebra on the (multiplicative) generators $e_1,\ldots,e_{n-1}$ viewed as a $\C[\tau,\tau^{-1}]$-module. Here $\tau$ is a variable that commutes with all generators, and the generators satisfy the relations
 
 1) $e_i^2=e_i$
 
@@ -1382,11 +1384,6 @@ Define the writhe $w(\sigma)$ of a braid $\sigma$ in the same way as the writhe 
 $V_{\widehat\sigma}(\tau)=\tau^{-w(\sigma)}tr\circ\rho(\sigma)$
 \end{thm}
 
-
-
-\begin{remark}
-We can do something similar for the Kauffman bracket polynomial, using other algebras.
-\end{remark}
 
 
 
@@ -1482,6 +1479,33 @@ As a result, expect many instances of the form $K_1\# K_2\cong K_3\# K_4$ (for $
 \subsection{Thoughts and Interpretations}
 
 So every (connected) knot falls into one of these 3 categories. That's simple. But each category can be very complex (except maybe for torus knots). That's hard.
+
+
+\clearpage
+\section{4/19: Foreshadowing of (statistical) physics}
+
+Yang-Baxter equation via matrices and diagrams.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \end{document}
